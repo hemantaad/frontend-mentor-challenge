@@ -110,9 +110,11 @@ body {
   --content-padding: 1.5rem;
   --content-spacing: 1rem;
 
+  display: grid;
   background-color: var(--color-neutral-white);
   border-radius: 0.5rem;
   overflow: hidden;
+  max-width: 600px;
 }
 
 .product__content {
@@ -137,6 +139,12 @@ body {
   font-size: 2rem;
   font-weight: var(--fw-bold);
   color: var(--color-primary);
+}
+
+@media screen and (min-width: 600px) {
+  .product {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Button */

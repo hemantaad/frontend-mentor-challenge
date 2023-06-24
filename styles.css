@@ -1,3 +1,19 @@
+:root {
+  --color-primary: hsl(158, 36%, 37%);
+  --color-primary-dark: hsl(158, 34%, 14%);
+  --color-secondary: hsl(30, 38%, 92%);
+
+  --color-neutral-dark-blue: hsl(212, 21%, 14%);
+  --color-neutral-grayish-blue: hsl(228, 12%, 48%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+
+  --ff-accent: "Fraunces", serif;
+  --ff-base: "Montserrat", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -20,7 +36,7 @@
     4. Improve text rendering
   */
 body {
-  line-height: 1.5;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,4 +73,95 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+/* General Styling */
+
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--color-neutral-grayish-blue);
+  background-color: var(--color-secondary);
+
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 1rem;
+}
+
+/* Utilities */
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Product Styles */
+
+.product {
+  --content-padding: 1.5rem;
+  --content-spacing: 1rem;
+
+  background-color: var(--color-neutral-white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.product__content {
+  padding: var(--content-padding);
+  display: grid;
+  gap: 1rem;
+}
+
+.product__category {
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.product__title {
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  color: var(--color-neutral-dark-blue);
+}
+
+.product__price {
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+}
+
+/* Button */
+
+.button {
+  align-items: center;
+  background-color: var(--color-primary);
+  border: 0;
+  color: var(--color-neutral-white);
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: var(--fw-bold);
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+}
+
+.button[data-icon="shopping-cart"]::before {
+  content: "";
+  background-image: url("images/icon-cart.svg");
+  width: 15px;
+  height: 16px;
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
 }
